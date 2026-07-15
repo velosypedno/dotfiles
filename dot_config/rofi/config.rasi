@@ -1,0 +1,150 @@
+// Config //
+configuration {
+    modi:                        "drun,filebrowser,window,run";
+    show-icons:                  true;
+    display-drun:                " ";
+    display-run:                 " ";
+    display-filebrowser:         " ";
+    display-window:              " ";
+    drun-display-format:         "{name}";
+    window-format:               "{w}{t}";
+    font:                        "Inter 10";
+    icon-theme:                  "Tela-circle-dracula";
+
+    matching:                    "fuzzy";
+    sort:                        true;
+}
+
+// Main //
+window {
+    height:                      30em;
+    width:                       50em; // Трохи оптимізував ширину, бо немає картинки справа
+    transparency:                "real";
+    fullscreen:                  false;
+    enabled:                     true;
+    cursor:                      "default";
+    spacing:                     0em;
+    padding:                     0em;
+    border:                      2px;
+    border-radius:               8px;
+    border-color:                @select-bg;
+    background-color:            @main-bg;
+}
+
+mainbox {
+    enabled:                     true;
+    spacing:                     0em;
+    padding:                     0em;
+    orientation:                 vertical; // Стек вертикальний: зверху пошук, знизу список
+    children:                    [ "inputbar" , "listbox" ];
+    background-color:            transparent;
+}
+
+// Inputs //
+inputbar {
+    enabled:                     true;
+    spacing:                     0.5em;
+    padding:                     1em;
+    children:                    [ "prompt", "entry" ];
+    background-color:            @entry-bg;
+}
+
+prompt {
+    enabled:                     true;
+    background-color:            transparent;
+    text-color:                  @select-bg;
+    font:                        "Inter 12";
+}
+
+entry {
+    enabled:                     true;
+    background-color:            transparent;
+    text-color:                  @main-fg;
+    cursor:                      "text";
+    placeholder:                 "Search...";
+    placeholder-color:           @placeholder-fg;
+}
+
+// Lists //
+listbox {
+    spacing:                     0em;
+    padding:                     0em;
+    children:                    [ "listview" ];
+    background-color:            transparent;
+}
+
+listview {
+    enabled:                     true;
+    spacing:                     0.2em;
+    padding:                     1em;
+    columns:                     1;
+    lines:                       8;
+    cycle:                       true;
+    dynamic:                     true;
+    scrollbar:                   false;
+    layout:                      vertical;
+    reverse:                     false;
+    fixed-height:                true;
+    fixed-columns:               true;
+    cursor:                      "default";
+    background-color:            transparent;
+    text-color:                  @main-fg;
+}
+
+// Elements //
+element {
+    enabled:                     true;
+    spacing:                     1em;
+    padding:                     0.5em;
+    cursor:                      "pointer";
+    background-color:            transparent;
+    text-color:                  @main-fg;
+    border-radius:               4px;
+}
+
+element selected.normal {
+    background-color:            @select-bg;
+    text-color:                  @select-fg;
+}
+
+element-icon {
+    size:                        2.2em;
+    cursor:                      "inherit";
+    background-color:            transparent;
+    text-color:                  inherit;
+}
+
+element-text {
+    vertical-align:              0.5;
+    horizontal-align:            0.0;
+    cursor:                      "inherit";
+    background-color:            transparent;
+    text-color:                  inherit;
+}
+
+// Error message //
+error-message {
+    text-color:                  @main-fg;
+    background-color:            @main-bg;
+    text-transform:              capitalize;
+    children:                    [ "textbox" ];
+}
+
+textbox {
+    text-color:                  inherit;
+    background-color:            inherit;
+    vertical-align:              0.5;
+    horizontal-align:            0.5;
+}
+
+* {
+    main-bg:        #212121; /* Графітовий фон */
+    entry-bg:       #181818; /* Поле пошуку */
+    main-fg:        #ffffff; /* Білий текст */
+    placeholder-fg: #6c7086; /* Сірий плейсхолдер */
+
+    /* Розділяємо кольори */
+    border-red:     #ff3333; /* Спортивний червоний для рамки вікна */
+    select-bg:      #a63a3a; /* Приглушений, благородний темно-червоний для плашок */
+    select-fg:      #ffffff; /* Текст на плашці залишається білим */
+}

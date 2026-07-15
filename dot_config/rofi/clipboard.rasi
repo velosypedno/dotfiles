@@ -1,0 +1,112 @@
+// Config //
+configuration {
+    modi:                        "dmenu";
+    show-icons:                  false;
+    drun-display-format:         "{name}";
+    font:                        "Inter 10";
+}
+
+// Main //
+window {
+    height:                      30em;
+    width:                       45em;
+    transparency:                "real";
+    fullscreen:                  false;
+    enabled:                     true;
+    cursor:                      "default";
+    spacing:                     0em;
+    padding:                     0em;
+    border:                      2px;
+    border-radius:               8px;
+    border-color:                @border-red; /* Рамка буде яскраво-червоною */
+    background-color:            @main-bg;
+}
+
+mainbox {
+    enabled:                     true;
+    spacing:                     0em;
+    padding:                     0em;
+    orientation:                 vertical;
+    children:                    [ "inputbar", "listview" ];
+    background-color:            transparent;
+}
+
+// Inputs //
+inputbar {
+    enabled:                     true;
+    spacing:                     0em;
+    padding:                     1em;
+    children:                    [ "prompt", "entry" ];
+    background-color:            @entry-bg;
+}
+
+prompt {
+    enabled:                     true;
+    background-color:            transparent;
+    text-color:                  @border-red; /* Текст промпта (напр. "clip:") в колір рамки */
+    margin:                      0em 0.5em 0em 0em;
+}
+
+entry {
+    enabled:                     true;
+    background-color:            transparent;
+    text-color:                  @main-fg;
+    cursor:                      "text";
+    placeholder:                 "Search...";
+    placeholder-color:           @placeholder-fg;
+}
+
+// Lists //
+listview {
+    enabled:                     true;
+    spacing:                     0em;
+    padding:                     1em;
+    columns:                     1;
+    lines:                       8;
+    cycle:                       true;
+    dynamic:                     true;
+    scrollbar:                   false;
+    layout:                      vertical;
+    reverse:                     false;
+    fixed-height:                true;
+    fixed-columns:               true;
+    cursor:                      "default";
+    background-color:            transparent;
+    text-color:                  @main-fg;
+}
+
+// Elements //
+element {
+    enabled:                     true;
+    spacing:                     1em;
+    padding:                     0.6em;
+    cursor:                      "pointer";
+    background-color:            transparent;
+    text-color:                  @main-fg;
+    border-radius:               4px;
+}
+
+element selected.normal {
+    background-color:            @select-bg; /* Спокійний приглушений червоний */
+    text-color:                  @select-fg;
+}
+
+element-text {
+    vertical-align:              0.5;
+    horizontal-align:            0.0;
+    cursor:                      "inherit";
+    background-color:            transparent;
+    text-color:                  inherit;
+}
+
+// Оновлена палітра (Графіт + Спортивний червоний акцент + М'які плашки) //
+* {
+    main-bg:        #212121; /* Точний темно-сірий графіт */
+    entry-bg:       #181818; /* Контрастне темне поле пошуку */
+    main-fg:        #ffffff; /* Максимально чистий білий текст */
+    placeholder-fg: #6c7086; /* Сіра підказка */
+
+    border-red:     #ff3333; /* Яскравий червоний для рамки вікна */
+    select-bg:      #a63a3a; /* Приглушений ніжний червоний для плашок */
+    select-fg:      #ffffff; /* Текст на виділеному елементі залишається білим */
+}

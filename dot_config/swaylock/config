@@ -1,0 +1,52 @@
+# Запускати як демон у фоні
+daemonize
+
+# Показувати кількість невдалих спроб введення
+show-failed-attempts
+
+# Колір фону (глибокий темно-сірий)
+color=212121
+
+# НАЛАШТУВАННЯ ІНДИКАТОРА
+indicator
+indicator-radius=100
+indicator-thickness=10
+
+# Змусити індикатор бути видимим завжди (позначка блокування)
+indicator-idle-visible
+
+# Символ всередині кружечка (можна вставити іконку замка "🔒" або текстовий символ "[LOCKED]")
+# Звичайний swaylock рендерить звичайні Unicode-символи, якщо встановлено шрифт з їх підтримкою
+text-value="🔒"
+text-clear-value="🔒"
+text-wrong-value="🔒"
+
+# Стилізація ліній та кілець індикатора
+line-color=313244
+ring-color=212121
+inside-color=313244
+
+# Текст та підсвічування клавіш при введенні
+key-hl-color=ff3333
+text-color=ffffff
+separator-color=00000000
+
+# Кольори при правильному введенні/стиранні
+inside-clear-color=313244
+text-clear-color=ffffff
+ring-clear-color=ffffff
+line-clear-color=313244
+
+# Кольори при помилці (акцентний червоний)
+ring-wrong-color=ff3333
+text-wrong-color=ff3333
+inside-wrong-color=313244
+line-wrong-color=313244
+
+# Інші базові налаштування
+bs-hl-color=ff3333
+grace=2
+grace-no-mouse
+grace-no-touch
+ignore-empty-password
+show-failed-attempts
