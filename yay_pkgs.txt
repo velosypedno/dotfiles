@@ -2,9 +2,16 @@ cursor-bin
 downgrade
 exercism-bin
 exercism-bin-debug
+gnu-netcat
 google-chrome
+hyprland-protocols-git
+litehtml0.9
 minecraft-launcher
 python-pyamdgpuinfo
+qt5-location
+qt5-remoteobjects
+qt5-webchannel
+qt5-webengine
 wireguard-ui
 yay
 zoom
