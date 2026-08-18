@@ -1,0 +1,9 @@
+cursor-bin
+downgrade
+exercism-bin
+exercism-bin-debug
+google-chrome
+minecraft-launcher
+python-pyamdgpuinfo
+wireguard-ui
+zoom

@@ -1,0 +1,4 @@
+com.discordapp.Discord
+com.obsproject.Studio
+me.timschneeberger.GalaxyBudsClient
+org.prismlauncher.PrismLauncher
