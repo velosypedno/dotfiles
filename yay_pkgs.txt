@@ -6,4 +6,5 @@ google-chrome
 minecraft-launcher
 python-pyamdgpuinfo
 wireguard-ui
+yay
 zoom

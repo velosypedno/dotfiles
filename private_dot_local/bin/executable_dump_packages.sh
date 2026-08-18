@@ -12,13 +12,12 @@ dump_pacman_pkgs() {
     echo "==> Dumping explicitly installed pacman packages..."
     pacman -Qqent > "${CHEZMOI_PATH}/${PACMAN_PACKAGES_FILENAME}"
     # Ensure yay is present in the main package list if installed via official repos
-    echo "yay" >> "${CHEZMOI_PATH}/${PACMAN_PACKAGES_FILENAME}"
 }
 
 dump_yay_pkgs() {
     echo "==> Dumping AUR packages..."
     # Filter out yay from the AUR list to avoid duplicates
-    pacman -Qqmt | grep -v '^yay$' > "${CHEZMOI_PATH}/${YAY_PACKAGES_FILENAME}" || true
+    pacman -Qqmt > "${CHEZMOI_PATH}/${YAY_PACKAGES_FILENAME}"
 }
 
 dump_flatpack_pkgs() {
